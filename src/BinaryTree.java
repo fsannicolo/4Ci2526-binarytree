@@ -11,4 +11,53 @@ public class BinaryTree {
 
         this.root = n;
     }
+
+    // depth-first
+    public void preorder() {
+        preorder(root);
+    }
+
+    /**
+     * I nodi genitori sono visitati prima dei nodi figli
+     * @param n nodo di partenza
+     */
+    private void preorder(Node n) {
+
+        // exit clause
+        if (n == null) return;
+
+        System.out.print(n.getData()); 
+        preorder(n.getLeft());
+        preorder(n.getRight()); 
+    }
+
+    public void inorder() {
+        inorder(root);
+    }
+
+    // in-order
+    private void inorder(Node n) {
+
+        // exit clause
+        if (n == null) return;
+
+        inorder(n.getLeft());
+        System.out.print(n.getData()); 
+        inorder(n.getRight()); 
+    }
+
+    public void postorder() {
+        postorder(root);
+    }
+
+    // post-order
+    private void postorder(Node n) {
+
+        // exit clause
+        if (n == null) return;
+
+        postorder(n.getLeft());
+        postorder(n.getRight()); 
+        System.out.print(n.getData()); 
+    }
 }
