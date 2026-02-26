@@ -30,5 +30,22 @@ public class App {
         System.out.println("Postorder");
         tree.postorder();
         System.out.println(""); 
+
+        System.out.print("Numero di nodi nell'albero: ");
+        int count = tree.nodeCounter(a);
+        System.out.println(count);
+
+        System.out.print("Numero di foglie nell'albero: ");
+        int leaves = tree.leavesCounter(a);
+        System.out.println(leaves);
+
+        System.out.print("Cerco la lettera G: ");
+        boolean found = tree.searchNode(a, 'G');
+        System.out.println(found);
+
+        System.out.print("Profondità: ");
+        int depth = tree.depth(a);
+        System.out.println(depth);
     }
+
 }
