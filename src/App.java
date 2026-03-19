@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class App {
     public static void main(String[] args) throws Exception {
         
@@ -21,6 +23,7 @@ public class App {
         c.setRight(f);
         f.setLeft(i); 
 
+        // depth first
         System.out.println("Preorder");
         tree.preorder();
         System.out.println(""); 
@@ -31,21 +34,38 @@ public class App {
         tree.postorder();
         System.out.println(""); 
 
-        System.out.print("Numero di nodi nell'albero: ");
+        // breadth first
+        System.out.println("Breadth first");
+        tree.breadth();
+        System.out.println(""); 
+
         int count = tree.nodeCounter(a);
+        System.out.print("Numero di nodi nell'albero: ");
         System.out.println(count);
 
-        System.out.print("Numero di foglie nell'albero: ");
         int leaves = tree.leavesCounter(a);
+        System.out.print("Numero di foglie nell'albero: ");
         System.out.println(leaves);
 
-        System.out.print("Cerco la lettera G: ");
         boolean found = tree.searchNode(a, 'G');
+        System.out.print("Cerco la lettera G: ");
         System.out.println(found);
 
-        System.out.print("Profondità: ");
         int depth = tree.depth(a);
+        System.out.print("Profondità: ");
         System.out.println(depth);
+
+        int level = tree.getLevel(d);
+        System.out.print("Livello di D: ");
+        System.out.println(level);
+
+        System.out.print("Genitore di G: ");
+        Node parent = tree.getAncestor(g);
+        System.out.println(parent);
+
+        System.out.println("Percorso tra A e F: ");
+        System.out.println("discesa: " + tree.getPathList(a, f));
+        System.out.println("salita: " + tree.getPathList(f, a));
     }
 
 }
