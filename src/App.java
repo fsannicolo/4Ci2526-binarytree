@@ -47,6 +47,10 @@ public class App {
         System.out.print("Numero di foglie nell'albero: ");
         System.out.println(leaves);
 
+        int parents = tree.parentCounter(a);
+        System.out.print("Numero di genitori nell'albero: ");
+        System.out.println(parents);
+
         boolean found = tree.searchNode(a, 'G');
         System.out.print("Cerco la lettera G: ");
         System.out.println(found);

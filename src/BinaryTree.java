@@ -116,10 +116,28 @@ public class BinaryTree {
         // exit clause
         if (root == null) return 0;
         
+        // se è foglia, la conto
         if (root.getLeft() == null && root.getRight() == null) return 1;
 
         // chiamata ricorsiva
         return leavesCounter(root.getLeft()) + leavesCounter(root.getRight()); 
+    }
+
+    /**
+     * Conta quanti nodi genitore sono contenuti nel sotto-albero
+     * @param root nodo iniziale del sotto-albero
+     * @return numero di nodi genitore presenti
+     */
+    public int parentCounter(Node root) {
+
+        // exit clause
+        if (root == null) return 0;
+        
+        // se è foglia, la salto
+        if (root.getLeft() == null && root.getRight() == null) return 0;
+
+        // chiamata ricorsiva
+        return parentCounter(root.getLeft()) + parentCounter(root.getRight()) + 1; 
     }
 
     /**
